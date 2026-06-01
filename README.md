@@ -207,6 +207,52 @@ This book accommodates three distinct reading approaches:
 
 ---
 
+# Errata
+
+## Figure 1.3 — Communication Patterns in Agent Cognitive Architecture (p. 12)
+
+**Issue:** One of the two "Reasoning/Evaluation" nodes is duplicated.
+
+**Correction:** Replace the duplicated "Reasoning/Evaluation" node with **"Tool use/Action interface"**.
+
+### Corrected Figure
+
+![Figure 1.3 Corrected](Errata/Figure%201.3.png)
+
+---
+
+## Figure 1.5 — Hybrid Agents (p. 13)
+
+**Issue:** The label **"Coal"** is a typo.
+
+**Correction:** Change **"Coal"** to **"Goal"**.
+
+### Corrected Figure
+
+![Figure 1.5 Corrected](Errata/Figure%201.5.png)
+
+---
+
+## Figure 1.14 — The Agentic AI Progression Framework (p. 14)
+
+**Issue:** Levels 1 and 2 were incorrectly labeled.
+
+**Correction:**
+
+- Level 0 — Manual operations — Non-agentic systems
+- Level 1 — Reactive agents — Rule-based automation
+- Level 2 — Tool-using agents — Augmented execution
+- Level 3 — Planning agents — Contextual and goal-oriented
+- Level 4 — Learning agents — Adaptive and evolving
+
+### Corrected Figure
+
+![Figure 1.14 Corrected](Errata/Figure%201.14.png)
+
+
+
+
+
 ## About the Author
 
  [Imran Ahmad on LinkedIn](https://www.linkedin.com/in/cloudanum/)
