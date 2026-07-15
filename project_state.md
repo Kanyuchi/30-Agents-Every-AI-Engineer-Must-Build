@@ -11,11 +11,18 @@ _Last updated: 2026-07-15_
   and all 68 provider notebooks re-run with live keys.
 - Errata section + corrected figures (1.3, 1.5, 1.14) added.
 - The book PDF is stored locally at `book/` and git-ignored (~84 MB, copyrighted).
+- **Local run environment ready:** each `chapterNN/` has an isolated `.venv` (Python
+  3.12) + a Jupyter kernel "30 Agents chapterNN (Claude)". A single git-ignored root
+  `.env` holds the Claude key (`LLM_PROVIDER=anthropic`); dotenv's upward search means
+  every chapter reads it. All 17 kernels verified importing ipykernel + anthropic.
 
 ## Incomplete / not done
 
 - Shaun has not yet worked through the chapters himself (just acquired the book).
-- No chapter run/verified locally on this machine yet.
+- No chapter notebook has been fully executed live on this machine yet (envs ready; ch05 next).
+- **Known gotcha:** ch10/14/16 have a self-contradictory requirements set (base pins
+  langchain-core 0.2.x, claude file pins langchain-anthropic>=0.3.0 which needs 0.3.x).
+  Worked around by installing `langchain-anthropic>=0.1.15,<0.2` in those three envs.
 - Living documentation (`CLAUDE.md`, `session_log.md`, `whats_next.md`,
   `project_state.md`) bootstrapped 2026-07-15 — this is their first version.
 

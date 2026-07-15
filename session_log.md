@@ -1,5 +1,13 @@
 # Session Log
 
+## 2026-07-16 — Per-chapter venvs + Jupyter kernels for all 17 chapters
+- Built an isolated `chapterNN/.venv` (Python 3.12, via uv) for every chapter and registered a Jupyter kernel `30agents-chapterNN` / display "30 Agents chapterNN (Claude)". Chapters pin mutually-incompatible langchain/langgraph/numpy versions, so one shared env was impossible — per-chapter isolation chosen.
+- Python 3.12 (not 3.13) picked because old pins (`numpy==1.26.4`, `langchain==0.2.16`) have no 3.13 wheels. uv's shared cache dedupes torch across the heavy chapters (06/08/10/13; ch11's torch is commented out → actually light).
+- **Book requirements bug:** ch10/14/16 pin `langchain-core==0.2.38` (0.2.x) in requirements.txt but `langchain-anthropic>=0.3.0` (needs core >=0.3) in requirements-claude.txt — unsatisfiable. Remediated by installing `langchain-anthropic>=0.1.15,<0.2` (compatible with 0.2.x core) instead.
+- ch11's requirements.txt omits jupyter/ipykernel — added them so its kernel works.
+- ch06 system binaries (tesseract, poppler) already present via brew.
+- Removed the earlier root `.venv`; kernels are per-chapter now. `.venv/` git-ignored. Verified all 17 kernels import ipykernel + anthropic.
+
 ## 2026-07-15 — Single root .env for keys + fill template gaps
 - Consolidated to ONE git-ignored `.env` at the repo root holding all provider keys — removed the 17 per-chapter `.env` placeholders (they would shadow the root file in `find_dotenv`'s upward search).
 - Verified: `load_dotenv()` is called from `.py` files inside the repo (`utils.py`, `supporting/llm_provider.py`), so `find_dotenv` walks up and resolves the root `.env`. Smoke-tested from `chapter07` — root `.env` resolved, `LLM_PROVIDER=auto` read. ✓
