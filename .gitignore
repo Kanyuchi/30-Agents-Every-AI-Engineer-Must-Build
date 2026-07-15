@@ -21,3 +21,6 @@ Thumbs.db
 
 # Local copy of the commercial book (copyrighted; too large for git)
 book/*.pdf
+
+# Python virtual environment
+.venv/
