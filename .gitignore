@@ -1,5 +1,3 @@
-cat >> .gitignore << 'EOF'
-
 # Local environment files
 .env
 CLAUD.md
@@ -20,4 +18,6 @@ Thumbs.db
 
 # Jupyter runtime
 .local/
-EOF
+
+# Local copy of the commercial book (copyrighted; too large for git)
+book/*.pdf
