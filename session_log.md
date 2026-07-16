@@ -1,5 +1,12 @@
 # Session Log
 
+## 2026-07-16 — Drop `temperature` from Claude calls (same silent-fallback trap)
+- `claude-sonnet-5` (adaptive-thinking tier) rejects `temperature`/`top_p`/`top_k` with a 400 — so 8 chapters that passed `temperature` into their Anthropic call were *still* silently falling back to MockLLM even after the model swap.
+- Removed `temperature` from the real Anthropic call path in ch01, 02, 03, 06, 07, 09, 10, 14 (`ChatAnthropic(...)` constructors and raw `messages.create` kwargs). Left `MockChatAnthropic`, function-signature defaults, and OpenAI/Gemini paths untouched.
+- ch04/05/15 verified clean (no temperature on the Claude path); ch13's `temperature` refs are patient-vitals data, not LLM calls.
+- Live-verified ch03 (langchain-anthropic 0.3.22) and ch06 (1.4.8): `ChatAnthropic(model="claude-sonnet-5")` returns content, no 400.
+- **Unverified:** ch14/ch10 run the old langchain 0.2.x + langchain-anthropic 0.1.x; a live sonnet-5 invoke there may hang/be incompatible — edit is applied + JSON valid, but the old-langchain live path is untested.
+
 ## 2026-07-16 — Migrate dead model `claude-sonnet-4-20250514` → `claude-sonnet-5`
 - The book pinned `claude-sonnet-4-20250514`, which retired 2026-06-15 and now 404s — every `__RUN_CLAUDE_Sonnet4` notebook was silently falling back to MockLLM instead of calling Claude (observed in ch05 output: "Anthropic API error, falling back to MockLLM: 404").
 - Swapped the retired ID → `claude-sonnet-5` across 64 files (notebooks + `supporting/llm_provider.py` + LLM_COMPARISON docs). Chosen over Opus to stay in the Sonnet tier the notebooks were built for and keep per-run cost sane across 17 chapters.

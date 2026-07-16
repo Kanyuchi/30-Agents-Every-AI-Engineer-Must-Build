@@ -26,6 +26,10 @@ _Last updated: 2026-07-15_
 - **Known gotcha:** the book pins `claude-sonnet-4-20250514` (retired 2026-06-15, now 404s).
   Migrated repo-wide to `claude-sonnet-5` (2026-07-16). Note: Sonnet 5 / Opus 4.7+ / Fable 5
   reject a `temperature` param — code that sets `temperature` must omit it for those models.
+  Removed `temperature` from the real Anthropic call path in ch01/02/03/06/07/09/10/14
+  (2026-07-16); without this those chapters 400'd and silently fell back to MockLLM.
+- **Unverified live:** ch10/ch14/ch16 run old langchain 0.2.x; sonnet-5 on langchain-anthropic
+  0.1.x may hang or be incompatible — not yet tested end-to-end.
 - Living documentation (`CLAUDE.md`, `session_log.md`, `whats_next.md`,
   `project_state.md`) bootstrapped 2026-07-15 — this is their first version.
 
