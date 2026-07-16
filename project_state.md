@@ -23,6 +23,9 @@ _Last updated: 2026-07-15_
 - **Known gotcha:** ch10/14/16 have a self-contradictory requirements set (base pins
   langchain-core 0.2.x, claude file pins langchain-anthropic>=0.3.0 which needs 0.3.x).
   Worked around by installing `langchain-anthropic>=0.1.15,<0.2` in those three envs.
+- **Known gotcha:** the book pins `claude-sonnet-4-20250514` (retired 2026-06-15, now 404s).
+  Migrated repo-wide to `claude-sonnet-5` (2026-07-16). Note: Sonnet 5 / Opus 4.7+ / Fable 5
+  reject a `temperature` param — code that sets `temperature` must omit it for those models.
 - Living documentation (`CLAUDE.md`, `session_log.md`, `whats_next.md`,
   `project_state.md`) bootstrapped 2026-07-15 — this is their first version.
 

@@ -44,7 +44,7 @@ Each provider is rated 0--10 across eight dimensions:
 All four provider notebooks were executed with live API keys detected:
 
 - **OpenAI GPT-4o**: "Live API mode active. Key loaded (ends ...RNQA)." / "Live OpenAI LLM client initialized (gpt-4o)."
-- **Claude Sonnet 4**: "Live API mode active. Key loaded (ends ...tAAA)." / "Live Anthropic LLM client initialized (claude-sonnet-4-20250514)."
+- **Claude Sonnet 4**: "Live API mode active. Key loaded (ends ...tAAA)." / "Live Anthropic LLM client initialized (claude-sonnet-5)."
 - **Gemini Flash 2.5**: "Live API mode active. Key loaded (ends ...s9hA)." / "Live Gemini LLM client initialized (gemini-2.5-flash)."
 - **DeepSeek V2 16B**: "SIMULATION MODE ACTIVE" / "MockLLM initialized with 6-context response registry."
 

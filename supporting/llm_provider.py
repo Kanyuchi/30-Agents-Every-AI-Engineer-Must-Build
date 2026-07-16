@@ -32,9 +32,9 @@ PROVIDER_MODELS = {
         "legacy": "gpt-3.5-turbo",
     },
     "anthropic": {
-        "default": "claude-sonnet-4-20250514",
+        "default": "claude-sonnet-5",
         "fast": "claude-haiku-4-5-20251001",
-        "legacy": "claude-sonnet-4-20250514",
+        "legacy": "claude-sonnet-5",
     },
     "google": {
         "default": "gemini-2.5-flash",
@@ -42,6 +42,18 @@ PROVIDER_MODELS = {
         "legacy": "gemini-2.0-flash-lite",
     },
 }
+
+# Claude models that reject temperature/top_p/top_k (the adaptive-thinking tier:
+# Sonnet 5, Opus 4.7/4.8, Fable/Mythos 5). Passing a sampling param to these
+# returns a 400, so we omit temperature for them.
+_ANTHROPIC_NO_SAMPLING = (
+    "claude-sonnet-5", "claude-opus-4-8", "claude-opus-4-7",
+    "claude-fable-5", "claude-mythos-5",
+)
+
+
+def _anthropic_rejects_sampling(model: str) -> bool:
+    return any(model.startswith(m) for m in _ANTHROPIC_NO_SAMPLING)
 
 # Map of env var → provider name
 _PROVIDER_ENV_KEYS = {
@@ -183,12 +195,15 @@ def get_llm(provider="openai", model=None, api_key=None, temperature=0, **kwargs
 
     elif provider == "anthropic":
         from langchain_anthropic import ChatAnthropic
-        return ChatAnthropic(
+        anthropic_kwargs = dict(
             model=model,
-            temperature=temperature,
             api_key=api_key or os.getenv("ANTHROPIC_API_KEY"),
             **kwargs,
         )
+        # Sonnet 5 / Opus 4.7+ / Fable 5 reject temperature; omit it for them.
+        if not _anthropic_rejects_sampling(model):
+            anthropic_kwargs["temperature"] = temperature
+        return ChatAnthropic(**anthropic_kwargs)
 
     elif provider == "google":
         from langchain_google_genai import ChatGoogleGenerativeAI
@@ -282,7 +297,10 @@ def chat_completion(client, provider, messages, model=None, temperature=0):
             else:
                 user_messages.append(m)
 
-        kwargs = {"model": model, "messages": user_messages, "max_tokens": 4096, "temperature": temperature}
+        kwargs = {"model": model, "messages": user_messages, "max_tokens": 4096}
+        # Sonnet 5 / Opus 4.7+ / Fable 5 reject temperature; omit it for them.
+        if not _anthropic_rejects_sampling(model):
+            kwargs["temperature"] = temperature
         if system_msg:
             kwargs["system"] = system_msg
 

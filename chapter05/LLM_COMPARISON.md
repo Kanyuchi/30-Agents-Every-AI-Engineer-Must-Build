@@ -45,7 +45,7 @@ Each provider is rated 0-10 across eight dimensions:
 All four providers were run in LIVE MODE with real API keys:
 
 - **OpenAI GPT-4o**: `LIVE MODE -- OpenAI GPT-4o (key ...RNQA)`
-- **Claude Sonnet 4**: `LIVE MODE -- Claude claude-sonnet-4-20250514 (key ...tAAA)`
+- **Claude Sonnet 4**: `LIVE MODE -- Claude claude-sonnet-5 (key ...tAAA)`
 - **Gemini Flash 2.5**: `LIVE MODE -- Gemini 2.5 Flash (key ...s9hA)`
 - **DeepSeek V2 16B**: `LIVE MODE -- DeepSeek V2 16B via Ollama (local)`
 

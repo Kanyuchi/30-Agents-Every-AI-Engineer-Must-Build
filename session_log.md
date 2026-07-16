@@ -1,5 +1,12 @@
 # Session Log
 
+## 2026-07-16 — Migrate dead model `claude-sonnet-4-20250514` → `claude-sonnet-5`
+- The book pinned `claude-sonnet-4-20250514`, which retired 2026-06-15 and now 404s — every `__RUN_CLAUDE_Sonnet4` notebook was silently falling back to MockLLM instead of calling Claude (observed in ch05 output: "Anthropic API error, falling back to MockLLM: 404").
+- Swapped the retired ID → `claude-sonnet-5` across 64 files (notebooks + `supporting/llm_provider.py` + LLM_COMPARISON docs). Chosen over Opus to stay in the Sonnet tier the notebooks were built for and keep per-run cost sane across 17 chapters.
+- `supporting/llm_provider.py`: added `_anthropic_rejects_sampling()` guard — Sonnet 5 / Opus 4.7+ / Fable 5 reject a non-default `temperature` with a 400, so the LangChain and direct-SDK Anthropic paths now omit `temperature` for those models (verified: `temperature=0` → 400 on sonnet-5).
+- Smoke-tested live: the notebook's exact call shape (`claude-sonnet-5`, `max_tokens=1024`, no sampling params) returns `stop_reason=end_turn` with a clean answer — no truncation from default adaptive thinking, no 400.
+- Book variant notebooks stay named `__RUN_CLAUDE_Sonnet4` (filename unchanged); only the model string inside changed.
+
 ## 2026-07-16 — Per-chapter venvs + Jupyter kernels for all 17 chapters
 - Built an isolated `chapterNN/.venv` (Python 3.12, via uv) for every chapter and registered a Jupyter kernel `30agents-chapterNN` / display "30 Agents chapterNN (Claude)". Chapters pin mutually-incompatible langchain/langgraph/numpy versions, so one shared env was impossible — per-chapter isolation chosen.
 - Python 3.12 (not 3.13) picked because old pins (`numpy==1.26.4`, `langchain==0.2.16`) have no 3.13 wheels. uv's shared cache dedupes torch across the heavy chapters (06/08/10/13; ch11's torch is commented out → actually light).
