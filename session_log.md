@@ -1,5 +1,8 @@
 # Session Log
 
+## 2026-07-16 — Update "Claude Sonnet 4" display text -> "Claude Sonnet 5"
+- Model-ID and temperature fixes made the notebooks *run* on sonnet-5, but ~180 human-readable "Claude Sonnet 4" labels (markdown headers, titles, log strings, comparison docs) still named the old model. Replaced "Claude Sonnet 4" -> "Claude Sonnet 5" across 53 files (guarded against 4.x version strings; none existed). Filename suffix `__RUN_CLAUDE_Sonnet4` left unchanged (identifier, not display text; renaming would break README links).
+
 ## 2026-07-16 — Drop `temperature` from Claude calls (same silent-fallback trap)
 - `claude-sonnet-5` (adaptive-thinking tier) rejects `temperature`/`top_p`/`top_k` with a 400 — so 8 chapters that passed `temperature` into their Anthropic call were *still* silently falling back to MockLLM even after the model swap.
 - Removed `temperature` from the real Anthropic call path in ch01, 02, 03, 06, 07, 09, 10, 14 (`ChatAnthropic(...)` constructors and raw `messages.create` kwargs). Left `MockChatAnthropic`, function-signature defaults, and OpenAI/Gemini paths untouched.

@@ -58,7 +58,7 @@ The LLM receives "I need help with my billing" and must return structured percep
 ```
 Clean, minimal JSON with four fields. Correct sentiment classification. The `null` for emotion is honest but provides less signal for downstream modules. No intent or topic classification at this stage, which is appropriate -- the perception phase should observe, not interpret.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Actual output:**
 ```json
@@ -111,7 +111,7 @@ Minimal but functional. Uses `customer_need` instead of richer intent classifica
 ```
 Two-field JSON. Generic intent label (`request_assistance`) rather than domain-specific (`billing_assistance`). Priority "medium" is a reasonable default for a routine billing inquiry.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Actual output (truncated):**
 ```json
@@ -147,7 +147,7 @@ Identical structure and labels to GPT-4o. Generic `request_assistance` intent. F
 
 Generated a 6-step plan with formal salutation ("Hello [Customer's Name]"), acknowledgment, investigation steps, resolution communication, and a follow-up message. Tone was professional and polished. Notably included a follow-up step for ongoing satisfaction tracking. Used placeholder brackets (`[Customer's Name]`, `[Your Name]`) indicating template-awareness -- the model understands this will be customized before sending.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 Produced a detailed execution log with plan ID `billing_assistance_standard_001`, checkmarks for each of 7 steps, specific durations ("Step 1: 7 minutes", "Step 3: 18 minutes"), concrete dollar amounts ("$45.99 charge", "$22.99 courtesy credit"), multi-factor authentication mention, and a customer satisfaction score (9/10). Reads like an actual CRM case log rather than a generic template. Total execution time: 82 minutes across all steps.
 
@@ -167,7 +167,7 @@ Generated a formal email with subject line ("Acknowledgment of Your Billing Issu
 
 Produced a `feedback` object with `success_score_update: 0.9` and a paragraph of commentary noting the process was "comprehensive and customer-centric." Suggested improvement: "explicitly confirming the receipt of requested account information before proceeding with verification." Reasonable but thin -- one recommendation for a multi-step process.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 Produced a detailed `learning_outcome` with `plan_id` reference, `success_score: 0.92`, arrays of `strengths` (6 items), `areas_for_improvement` (2 items noting Step 3's 18-minute duration), `key_insights` (transparency + goodwill gestures), and concrete `model_updates` including timing targets ("step_3_target_duration: 12-15 minutes", "overall_target_duration: 70-75 minutes"). Self-critical analysis of its own execution.
 
@@ -189,7 +189,7 @@ The hybrid agent receives "Obstacle detected in aisle 5" and must demonstrate bo
 
 Reactive layer correctly produced `EMERGENCY_STOP` with 15ms latency. Deliberative layer returned a 4-waypoint reroute path with `status: "in_progress"`. Clean structure with proper layer coordination.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 Reactive layer matched other providers. Deliberative layer produced a detailed 5-step `action_sequence` including `ACKNOWLEDGE_EMERGENCY`, `HALT_ALL_MOTORS`, `SENSOR_SCAN_360` (200ms, HIGH resolution), `OBSTACLE_CLASSIFICATION` (0.95 detection confidence), and `PATH_REPLANNING` with A* algorithm specification, 1.5m safety buffer, and 3 fallback options. Estimated resolution time: 800ms. Significantly more detailed than other providers.
 
@@ -233,7 +233,7 @@ DeepSeek asked 6 questions similar to GPT-4o's but in a slightly more structured
 
 Generated a 7-day Paris itinerary with visa requirements (Schengen), travel insurance details (provider name "TravelSafe Insurance", policy number), and 6 daily activity plans. Used dated language ("November 2023") -- a temporal grounding issue.
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 Produced a trip plan but included the disclaimer about not being able to book directly. Recommended booking platforms instead. Focused on providing guidance rather than simulating actual booking.
 
@@ -249,7 +249,7 @@ Produced a 5-day itinerary with visa requirements (including a step-by-step appl
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **7.5** | **8.0** | **7.0** | **7.0** |
 | Completeness | **7.5** | **8.5** | **7.0** | **7.0** |
@@ -262,7 +262,7 @@ Produced a 5-day itinerary with visa requirements (including a step-by-step appl
 
 | **Provider** | **WEIGHTED AVERAGE** |
 |---|---|
-| **Claude Sonnet 4** | **7.3** |
+| **Claude Sonnet 5** | **7.3** |
 | **OpenAI GPT-4o** | **7.0** |
 | **Gemini Flash 2.5** | **6.8** |
 | **DeepSeek V2 (Local)** | **6.6** |
@@ -280,14 +280,14 @@ Produced a 5-day itinerary with visa requirements (including a step-by-step appl
 
 ```
 Level 6: Create      |
-Level 5: Evaluate    | Claude Sonnet 4
+Level 5: Evaluate    | Claude Sonnet 5
 Level 4: Analyze     | OpenAI GPT-4o
 Level 3: Apply       | Gemini Flash 2.5, DeepSeek V2 (Local)
 Level 2: Understand  |
 Level 1: Remember    |
 ```
 
-**Claude Sonnet 4** reaches Level 5 (Evaluate) by explicitly assessing step durations against targets in the learning phase, producing self-critical analysis ("Step 3 duration exceeded optimal range"), and generating concrete timing improvements. However, its tendency to over-produce metadata means the evaluation is partly self-referential.
+**Claude Sonnet 5** reaches Level 5 (Evaluate) by explicitly assessing step durations against targets in the learning phase, producing self-critical analysis ("Step 3 duration exceeded optimal range"), and generating concrete timing improvements. However, its tendency to over-produce metadata means the evaluation is partly self-referential.
 
 **OpenAI GPT-4o** operates at Level 4 (Analyze) -- decomposes the billing scenario into six clear phases with relationships between them, and includes a follow-up step showing customer journey awareness. Does not reach Level 5 because its learning phase lacks specific self-critique.
 
@@ -304,7 +304,7 @@ Level 1: Remember    |
 ```
   Provider              Score  Visual
   --------------------  -----  ------------------------------
-  1. Claude Sonnet 4        7.3  ######################--------
+  1. Claude Sonnet 5        7.3  ######################--------
   2. OpenAI GPT-4o          7.0  #####################---------
   3. Gemini Flash 2.5       6.8  ####################----------
   4. DeepSeek V2 (Local)    6.6  ####################----------
@@ -323,7 +323,7 @@ Level 1: Remember    |
   L1 Remember     | C G D O
 ```
 
-Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
+Legend: **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
 
 ---
 
@@ -348,7 +348,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 - The detailed CRM simulation in the action phase (82 minutes, $22.99 credits, plan IDs) is impressive but fictional -- a real system would need actual database lookups, not simulated case numbers
 - Its Conciseness penalty (5.5) is the most severe of any provider across any dimension
 
-**Runner-up:** Claude Sonnet 4 (7.3/10) -- Highest raw score. Best for systems that need rich metadata for downstream processing. The learning phase with timing targets is genuinely useful for self-improving agent loops. Choose Claude when token cost is not a constraint and you need maximum auditability.
+**Runner-up:** Claude Sonnet 5 (7.3/10) -- Highest raw score. Best for systems that need rich metadata for downstream processing. The learning phase with timing targets is genuinely useful for self-improving agent loops. Choose Claude when token cost is not a constraint and you need maximum auditability.
 
 **Third place:** Gemini Flash 2.5 (6.8/10) -- The `speech_act` analysis was linguistically sophisticated and the information-gathering approach in the action phase was realistic. Penalized for hybrid agent failure (deliberative layer echoed reactive) and priority miscalibration.
 
@@ -357,7 +357,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 | Scenario | Best Choice | Why |
 |---|---|---|
 | Customer-facing responses | OpenAI GPT-4o | Most natural conversational tone; deployment-ready templates |
-| Self-improving agent loops | Claude Sonnet 4 | Timing targets and self-critical learning enable iterative optimization |
+| Self-improving agent loops | Claude Sonnet 5 | Timing targets and self-critical learning enable iterative optimization |
 | High-throughput triage | Gemini Flash 2.5 | Domain-specific intent labels with concise output; fastest inference |
 | Air-gapped / private data | DeepSeek V2 (Local) | Only option with zero cloud dependency |
 | Rapid prototyping | DeepSeek V2 (Local) | No API key required, instant iteration, zero cost |
@@ -379,7 +379,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 
 ---
 
-### Claude Sonnet 4 -- "The Over-Engineer"
+### Claude Sonnet 5 -- "The Over-Engineer"
 
 **Strengths:**
 - Deepest JSON structures with semantic field naming (plan_id, intent_factors, priority_factors)
@@ -429,10 +429,10 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 | Use Case | Recommended Provider | Why |
 |---|---|---|
 | **Production cognitive loop** | OpenAI GPT-4o | Best cost-to-quality ratio; natural language output ready for customers |
-| **Metadata-rich orchestration** | Claude Sonnet 4 | Deepest reasoning structures; machine-parseable output with plan IDs |
+| **Metadata-rich orchestration** | Claude Sonnet 5 | Deepest reasoning structures; machine-parseable output with plan IDs |
 | **High-throughput triage** | Gemini Flash 2.5 | Best speed/cost with domain-specific classification |
 | **Offline development** | Ollama DeepSeek V2 | Zero cost, valid JSON, privacy-preserving |
-| **Self-improving agents** | Claude Sonnet 4 | Learning phase with timing targets enables iterative optimization |
+| **Self-improving agents** | Claude Sonnet 5 | Learning phase with timing targets enables iterative optimization |
 
 ---
 

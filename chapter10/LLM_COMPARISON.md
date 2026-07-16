@@ -48,7 +48,7 @@ Chapter 10 uses a **LangChain-based pipeline** where memory management, safety l
 
 - **Gemini Flash 2.5**: Attempted Live Mode but `ChatGoogleGenerativeAI` failed with `cannot import name 'ModelProfile' from 'langchain_core.language_models'`. Also failed on image generation (`'GenerativeModel' object has no attribute 'images'`). All dialogue and content outputs come from MockChatOpenAI fallback.
 - **OpenAI GPT-4o**: Attempted Live Mode but `ChatOpenAI` failed with `Client.__init__() got an unexpected keyword argument 'proxies'`. `OpenAIEmbeddings` also failed with the same error. All outputs come from MockChatOpenAI fallback.
-- **Claude Sonnet 4**: No saved outputs (0 output cells -- notebook never executed).
+- **Claude Sonnet 5**: No saved outputs (0 output cells -- notebook never executed).
 - **DeepSeek V2 16B**: No saved outputs (0 output cells -- notebook never executed).
 
 **Consequence:** The Gemini and OpenAI notebooks produce byte-identical mock outputs. Every dialogue turn, every campaign asset, every brand compliance check is from the same MockChatOpenAI. There is no actual LLM differentiation to evaluate.
@@ -61,7 +61,7 @@ Chapter 10 uses a **LangChain-based pipeline** where memory management, safety l
 |---|---|---|---|---|
 | Gemini Flash 2.5 | 19 | Live (Google) | MockChatOpenAI | `ModelProfile` import error |
 | OpenAI GPT-4o | 19 | Live (OpenAI) | MockChatOpenAI | `proxies` keyword error |
-| Claude Sonnet 4 | 0 | Not executed | -- | -- |
+| Claude Sonnet 5 | 0 | Not executed | -- | -- |
 | DeepSeek V2 16B | 0 | Not executed | -- | -- |
 
 ---
@@ -115,7 +115,7 @@ Because all executed notebooks used MockChatOpenAI with identical outputs, indiv
 
 ## Overall Scorecard
 
-| Dimension | Gemini Flash 2.5* | OpenAI GPT-4o* | Claude Sonnet 4 | DeepSeek V2 |
+| Dimension | Gemini Flash 2.5* | OpenAI GPT-4o* | Claude Sonnet 5 | DeepSeek V2 |
 |---|---|---|---|---|
 | All dimensions | MockChatOpenAI | MockChatOpenAI | No outputs | No outputs |
 | **WEIGHTED AVERAGE** | *6.4* | *6.4* | N/A | N/A |
@@ -148,7 +148,7 @@ MockLLM applies persona patterns (reflective questioning, empathetic validation)
   --------------------  -----------------  ----------------
   Gemini Flash 2.5      Executed (19)      MockChatOpenAI (import error)
   OpenAI GPT-4o         Executed (19)      MockChatOpenAI (proxies error)
-  Claude Sonnet 4       Not executed (0)   --
+  Claude Sonnet 5       Not executed (0)   --
   DeepSeek V2 (Local)   Not executed (0)   --
 ```
 
@@ -180,8 +180,8 @@ The chapter architecture reveals six components, only two of which depend on the
 
 | Scenario | Likely Best Choice | Why |
 |---|---|---|
-| Production chatbot | GPT-4o or Claude Sonnet 4 | Historically strong at empathetic multi-turn dialogue |
-| Content creation | Claude Sonnet 4 | Strong at structured content with depth and tone control |
+| Production chatbot | GPT-4o or Claude Sonnet 5 | Historically strong at empathetic multi-turn dialogue |
+| Content creation | Claude Sonnet 5 | Strong at structured content with depth and tone control |
 | High-volume chat | Gemini Flash 2.5 | Fastest response times for conversational workloads |
 | Local testing | DeepSeek V2 (Local) | Zero cost for pipeline development and validation |
 

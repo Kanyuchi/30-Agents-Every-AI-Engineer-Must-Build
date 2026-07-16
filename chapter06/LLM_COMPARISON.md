@@ -45,7 +45,7 @@ Each provider is rated 0-10 across eight dimensions:
 | Provider | RAG Queries | Embeddings | arXiv Search | Scoring Basis |
 |---|---|---|---|---|
 | **OpenAI GPT-4o** | LIVE (RetrievalQA + GPT-4o) | LIVE (text-embedding-3-large) | SIMULATION (mock papers) | Real LLM for RAG |
-| **Claude Sonnet 4** | LIVE (ChatAnthropic) | LIVE (HuggingFace all-MiniLM-L6-v2) | SIMULATION (mock papers) | Real LLM for RAG |
+| **Claude Sonnet 5** | LIVE (ChatAnthropic) | LIVE (HuggingFace all-MiniLM-L6-v2) | SIMULATION (mock papers) | Real LLM for RAG |
 | **Gemini Flash 2.5** | LIVE (ChatGoogleGenerativeAI) | LIVE (gemini-embedding-001) | SIMULATION (mock papers) | Real LLM for RAG |
 | **DeepSeek V2 16B** | LIVE (Ollama deepseek-v2:16b) | LIVE (Ollama llama3.1:8b) | SIMULATION (mock papers) | Real LLM for RAG |
 
@@ -78,7 +78,7 @@ Each provider is rated 0-10 across eight dimensions:
 
 ---
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Actual output:** Structured with hierarchical markdown headings:
 - `## Operational Limitations` section: Index Freshness, Latency Issues, Security Constraints
@@ -163,7 +163,7 @@ Each provider is rated 0-10 across eight dimensions:
 
 ---
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Actual output:** Structured with four bold sections:
 - **Full Refunds:** Cancel within 14 calendar days of renewal
@@ -244,7 +244,7 @@ All four providers used SIMULATION MODE for arXiv retrieval (12 mock papers). Cl
 
 Averaged across Tasks 1 and 2 (the RAG queries where LLM differentiation is strongest):
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **9.5** | **9.5** | **9.5** | **9.0** |
 | Completeness | **9.5** | **9.0** | **8.0** | **5.5** |
@@ -262,8 +262,8 @@ Averaged across Tasks 1 and 2 (the RAG queries where LLM differentiation is stro
 
 ```
 Level 6: Create      |
-Level 5: Evaluate    | ============ Claude Sonnet 4 (Task 1: epistemic self-assessment)
-Level 4: Analyze     | ============ Claude Sonnet 4 (Task 2), OpenAI GPT-4o (Task 1)
+Level 5: Evaluate    | ============ Claude Sonnet 5 (Task 1: epistemic self-assessment)
+Level 4: Analyze     | ============ Claude Sonnet 5 (Task 2), OpenAI GPT-4o (Task 1)
 Level 3: Apply       | ============ OpenAI GPT-4o (Task 2), Gemini Flash 2.5
 Level 2: Understand  | ============ DeepSeek V2
 Level 1: Remember    |
@@ -280,7 +280,7 @@ Claude reaches Level 5 on the RAG limitations query by categorizing limitations 
 ```
   Provider              Score  Visual
   --------------------  -----  ------------------------------
-  Claude Sonnet 4        8.6   =========================.....
+  Claude Sonnet 5        8.6   =========================.....
   OpenAI GPT-4o          7.8   =======================.......
   Gemini Flash 2.5       7.6   ======================........
   DeepSeek V2 (Local)    5.4   ================..............
@@ -299,19 +299,19 @@ Claude reaches Level 5 on the RAG limitations query by categorizing limitations 
   L1 Remember     | C O G D
 ```
 
-Legend: **C** = Claude Sonnet 4, **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **C** = Claude Sonnet 5, **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 
-## Winner: Claude Sonnet 4
+## Winner: Claude Sonnet 5
 
 | | |
 |---|---|
-| **Chapter 6 Winner** | **Claude Sonnet 4** |
+| **Chapter 6 Winner** | **Claude Sonnet 5** |
 | **Score** | **8.6 / 10** |
 | **Bloom's Level** | **Level 5 -- Evaluate** |
 
-**Why Claude Sonnet 4 wins this chapter:**
+**Why Claude Sonnet 5 wins this chapter:**
 - Highest weighted average (8.6) driven by exceptional structure and nuance scores
 - Only provider to reach Bloom's Level 5 -- evaluating context completeness and explicitly flagging when its evidence base is insufficient ("the provided context appears to be incomplete")
 - Best-structured output: hierarchical markdown sections that mirror professional documentation
@@ -327,11 +327,11 @@ Legend: **C** = Claude Sonnet 4, **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5
 
 | Scenario | Best Choice | Why |
 |---|---|---|
-| Maximum quality | Claude Sonnet 4 | Highest completeness, structure, and analytical depth |
+| Maximum quality | Claude Sonnet 5 | Highest completeness, structure, and analytical depth |
 | Broadest coverage | OpenAI GPT-4o | Captured the most limitations and policy details |
 | Cost-efficient production | Gemini Flash 2.5 | Strong accuracy with best conciseness at lower cost |
 | Air-gapped / private data | DeepSeek V2 (Local) | Only option with zero cloud dependency; strong OCR extraction |
-| Structured output for downstream systems | Claude Sonnet 4 | Hierarchical markdown formatting; directly parseable |
+| Structured output for downstream systems | Claude Sonnet 5 | Hierarchical markdown formatting; directly parseable |
 
 
 ## Provider Profiles
@@ -340,7 +340,7 @@ Legend: **C** = Claude Sonnet 4, **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5
 **Strengths:** Broadest coverage of RAG limitations (6 distinct categories); strong factual grounding; numbered formatting aids quick scanning. Clean policy extraction with all key details.
 **Weaknesses:** Single-paragraph format on the refund query sacrifices scannability; no self-assessment of coverage completeness.
 
-### Claude Sonnet 4 -- "The Analytical Structurer"
+### Claude Sonnet 5 -- "The Analytical Structurer"
 **Strengths:** Highest cognitive sophistication (Bloom's Level 5); exceptional structured output with hierarchical sections; proactively flags evidence gaps; added scope qualifier absent from other providers; synthesized mitigation strategies from multiple chunks.
 **Weaknesses:** More verbose than OpenAI or Gemini; missed the "quality of retrieved chunks" limitation and chunking misconfiguration details on Task 1.
 
@@ -358,12 +358,12 @@ Legend: **C** = Claude Sonnet 4, **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5
 
 | Use Case | Recommended Provider | Why |
 |---|---|---|
-| **Production RAG system** | Claude Sonnet 4 | Highest structure, grounding, and analytical depth |
+| **Production RAG system** | Claude Sonnet 5 | Highest structure, grounding, and analytical depth |
 | **High-volume document processing** | Gemini Flash 2.5 | Best speed/cost ratio with strong accuracy |
 | **Offline / air-gapped environments** | DeepSeek V2 (Local) | Zero cloud dependency; strong OCR extraction |
 | **Maximum factual coverage** | OpenAI GPT-4o | Broadest enumeration of limitations and details |
 | **Cost-optimized production** | Gemini Flash 2.5 | Lowest per-token cost among cloud providers |
-| **Compliance-critical applications** | Claude Sonnet 4 | Best at surfacing caveats, edge cases, and scope qualifiers |
+| **Compliance-critical applications** | Claude Sonnet 5 | Best at surfacing caveats, edge cases, and scope qualifiers |
 
 ---
 

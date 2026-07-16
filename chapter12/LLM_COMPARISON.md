@@ -63,7 +63,7 @@ Chapter 12 implements a **fully deterministic ethical reasoning pipeline**. Ever
 
 | Provider | Output Cells | Declared Mode | Actual LLM Usage |
 |---|---|---|---|
-| Claude Sonnet 4 | 14 | Live Mode (Anthropic) | MockLLM for FairHiringAgent; all else deterministic |
+| Claude Sonnet 5 | 14 | Live Mode (Anthropic) | MockLLM for FairHiringAgent; all else deterministic |
 | Gemini Flash 2.5 | 14 | Live Mode (Google) | MockLLM for FairHiringAgent; all else deterministic |
 | OpenAI GPT-4o | 14 | Live Mode (OpenAI) | MockLLM for FairHiringAgent; all else deterministic |
 | DeepSeek V2 16B | 14 | Fallback (Ollama key missing) | MockLLM for FairHiringAgent; all else deterministic |
@@ -138,7 +138,7 @@ Because the entire pipeline is deterministic and all providers produce functiona
 
 ## Overall Scorecard
 
-| Dimension | Claude Sonnet 4 | Gemini Flash 2.5 | OpenAI GPT-4o | DeepSeek V2 |
+| Dimension | Claude Sonnet 5 | Gemini Flash 2.5 | OpenAI GPT-4o | DeepSeek V2 |
 |---|---|---|---|---|
 | All dimensions | Deterministic | Deterministic | Deterministic | Deterministic |
 | **WEIGHTED AVERAGE** | 7.6 | 7.6 | 7.6 | 7.6 |
@@ -169,7 +169,7 @@ The pipeline reaches Level 4 (Analyze) through multi-framework ethical analysis 
 ```
   Provider              Outputs  Declared Mode     Actual LLM Usage
   --------------------  -------  ----------------  ----------------
-  Claude Sonnet 4          14   Live (Anthropic)   MockLLM / deterministic
+  Claude Sonnet 5          14   Live (Anthropic)   MockLLM / deterministic
   Gemini Flash 2.5         14   Live (Google)      MockLLM / deterministic
   OpenAI GPT-4o            14   Live (OpenAI)      MockLLM / deterministic
   DeepSeek V2 (Local)      14   Fallback (Ollama)  MockLLM / deterministic

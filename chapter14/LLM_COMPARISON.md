@@ -44,7 +44,7 @@ Each provider is rated 0--10 across eight dimensions:
 | Provider | Output Cells | LLM Mode | Key Observation |
 |---|---|---|---|
 | OpenAI GPT-4o | 13 | MockChatOpenAI (fallback) | ChatOpenAI init failed: `No module named 'langchain_core.pydantic_v1'`. Fell back to MockChatOpenAI. |
-| Claude Sonnet 4 | 0 | Not executed | Notebook has no saved outputs. Excluded from scoring. |
+| Claude Sonnet 5 | 0 | Not executed | Notebook has no saved outputs. Excluded from scoring. |
 | Gemini Flash 2.5 | 13 | **Live Gemini** (gemini-2.5-flash) | "Using LIVE Gemini LLM (gemini-2.5-flash)" -- only provider with actual LLM calls. |
 | DeepSeek V2 16B | 13 | MockChatOpenAI (simulation) | "Using SIMULATED LLM (MockChatOpenAI)" -- explicit simulation mode. |
 
@@ -126,7 +126,7 @@ DeepSeek ran in explicit simulation mode with MockChatOpenAI:
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | N/A | **7.0** | **8.0** |
 | Completeness | **8.0** | N/A | **6.0** | **8.0** |
@@ -138,7 +138,7 @@ DeepSeek ran in explicit simulation mode with MockChatOpenAI:
 | Practical Utility | **7.0** | N/A | **7.0** | **7.0** |
 | **WEIGHTED AVERAGE** | **7.3** | **N/A** | **6.8** | **7.5** |
 
-> *Claude Sonnet 4 excluded (0 output cells). OpenAI fell back to MockChatOpenAI due to langchain import error. Gemini was the only live provider. DeepSeek ran clean simulation.*
+> *Claude Sonnet 5 excluded (0 output cells). OpenAI fell back to MockChatOpenAI due to langchain import error. Gemini was the only live provider. DeepSeek ran clean simulation.*
 
 ---
 
@@ -187,7 +187,7 @@ All three active providers reach Level 4 (Analyze) through multi-agent decomposi
   DeepSeek V2 (Local)    7.5  ██████████████████████░░░░░░░░░
   OpenAI GPT-4o          7.3  █████████████████████░░░░░░░░░░
   Gemini Flash 2.5       6.8  ████████████████████░░░░░░░░░░░
-  Claude Sonnet 4        N/A  (no saved outputs)
+  Claude Sonnet 5        N/A  (no saved outputs)
 ```
 
 ### Bloom's Taxonomy Tower
@@ -243,7 +243,7 @@ Legend: **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 **Strengths:** Correct pipeline architecture; complete agent routing; proper compliance gate with concentration violation detection.
 **Weaknesses:** Fell back to MockChatOpenAI due to langchain import error; Yahoo Finance 429 errors and deprecation warnings clutter output.
 
-### Claude Sonnet 4 -- Not Evaluated
+### Claude Sonnet 5 -- Not Evaluated
 **Status:** 0 output cells saved. Notebook was not executed.
 
 ### Gemini Flash 2.5 -- "The Live Explorer"

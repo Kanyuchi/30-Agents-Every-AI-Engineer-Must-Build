@@ -44,7 +44,7 @@ Each provider is rated 0--10 across eight dimensions:
 All four provider notebooks were executed with live API keys detected:
 
 - **OpenAI GPT-4o**: "Live API mode active. Key loaded (ends ...RNQA)." / "Live OpenAI LLM client initialized (gpt-4o)."
-- **Claude Sonnet 4**: "Live API mode active. Key loaded (ends ...tAAA)." / "Live Anthropic LLM client initialized (claude-sonnet-5)."
+- **Claude Sonnet 5**: "Live API mode active. Key loaded (ends ...tAAA)." / "Live Anthropic LLM client initialized (claude-sonnet-5)."
 - **Gemini Flash 2.5**: "Live API mode active. Key loaded (ends ...s9hA)." / "Live Gemini LLM client initialized (gemini-2.5-flash)."
 - **DeepSeek V2 16B**: "SIMULATION MODE ACTIVE" / "MockLLM initialized with 6-context response registry."
 
@@ -74,7 +74,7 @@ The simulation outputs demonstrate:
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.0** | **8.0** | **8.0** |
 | Completeness | **8.0** | **8.0** | **8.0** | **8.0** |
@@ -126,7 +126,7 @@ The simulation pipeline reaches Level 4 (Analyze) through multi-dimensional clin
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   OpenAI GPT-4o          7.5  ██████████████████████░░░░░░░░░
-  Claude Sonnet 4        7.5  ██████████████████████░░░░░░░░░
+  Claude Sonnet 5        7.5  ██████████████████████░░░░░░░░░
   Gemini Flash 2.5       7.5  ██████████████████████░░░░░░░░░
   DeepSeek V2 (Local)    7.5  ██████████████████████░░░░░░░░░
 ```
@@ -144,7 +144,7 @@ The simulation pipeline reaches Level 4 (Analyze) through multi-dimensional clin
   L1 Remember     | O C G D
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 

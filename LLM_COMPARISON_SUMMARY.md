@@ -2,7 +2,7 @@
 
 **Book:** *30 Agents Every AI Engineer Must Build* by Imran Ahmad (Packt Publishing, 2026)
 
-This document aggregates the LLM provider comparison results across all 17 chapters, covering 30 agent architectures tested with four providers: **OpenAI GPT-4o**, **Claude Sonnet 4**, **Gemini Flash 2.5**, and **DeepSeek V2 16B** (local via Ollama).
+This document aggregates the LLM provider comparison results across all 17 chapters, covering 30 agent architectures tested with four providers: **OpenAI GPT-4o**, **Claude Sonnet 5**, **Gemini Flash 2.5**, and **DeepSeek V2 16B** (local via Ollama).
 
 Each chapter's detailed analysis is in its own `LLM_COMPARISON.md`. This file provides the bird's-eye view.
 
@@ -21,7 +21,7 @@ Each chapter's detailed analysis is in its own `LLM_COMPARISON.md`. This file pr
   │                                                                 │
   │   OpenAI GPT-4o     — 3 wins  (Ch 1, 3, 8)                     │
   │   DeepSeek V2 Local — 3 wins  (Ch 7, 14, 15)                   │
-  │   Claude Sonnet 4   — 1 win   (Ch 6)                           │
+  │   Claude Sonnet 5   — 1 win   (Ch 6)                           │
   │   Gemini Flash 2.5  — 1 win   (Ch 4)                           │
   │   Ties              — 8 chapters (identical/deterministic)      │
   │   No winner         — 1 chapter (insufficient live data)        │
@@ -39,7 +39,7 @@ Computed across chapters where each provider had valid (non-N/A) outputs:
   Provider               Avg Score  Chapters    Visual
   ─────────────────────  ─────────  ────────    ──────────────────────────────
   🥇 OpenAI GPT-4o          7.08     17/17      █████████████████████░░░░░░░░░
-  🥈 Claude Sonnet 4        7.14     13/17      █████████████████████░░░░░░░░░
+  🥈 Claude Sonnet 5        7.14     13/17      █████████████████████░░░░░░░░░
   🥉 Gemini Flash 2.5       6.95     17/17      ████████████████████░░░░░░░░░░
      DeepSeek V2 (Local)    6.82     16/17      ████████████████████░░░░░░░░░░
 ```
@@ -106,7 +106,7 @@ Computed across chapters where each provider had valid (non-N/A) outputs:
 ```
   Provider              Avg Level   Name
   ─────────────────────  ─────────  ──────────────
-  Claude Sonnet 4          4.5      Analyze-Evaluate
+  Claude Sonnet 5          4.5      Analyze-Evaluate
   OpenAI GPT-4o            4.3      Analyze-Evaluate
   Gemini Flash 2.5         3.8      Apply-Analyze
   DeepSeek V2 (Local)      3.2      Apply
@@ -131,7 +131,7 @@ Computed across chapters where each provider had valid (non-N/A) outputs:
 | **Weakness** | Less structured than Claude; API format lock-in caused fallbacks in some chapters |
 | **Best for** | Production agents, customer-facing systems, balanced workloads |
 
-### Claude Sonnet 4 — "The Deep Analyst"
+### Claude Sonnet 5 — "The Deep Analyst"
 
 | Attribute | Detail |
 |---|---|
@@ -223,7 +223,7 @@ The gap between cloud and local is much smaller than previously reported (0.24 v
   │  ├─ YES → OpenAI GPT-4o (most wins, consistent quality)         │
   │  │                                                               │
   │  Need deep analytical reasoning with caveats?                    │
-  │  ├─ YES → Claude Sonnet 4 (best at RAG depth, uncertainty)      │
+  │  ├─ YES → Claude Sonnet 5 (best at RAG depth, uncertainty)      │
   │  │                                                               │
   │  Need to minimize cost at scale?                                 │
   │  ├─ YES → Gemini Flash 2.5 (best $/quality ratio)               │
@@ -240,12 +240,12 @@ The gap between cloud and local is much smaller than previously reported (0.24 v
 
 | Domain | Primary | Secondary | Why |
 |---|---|---|---|
-| **Research & RAG** | Claude Sonnet 4 | OpenAI GPT-4o | Claude for depth and uncertainty flagging; OpenAI for breadth |
+| **Research & RAG** | Claude Sonnet 5 | OpenAI GPT-4o | Claude for depth and uncertainty flagging; OpenAI for breadth |
 | **Production Agents** | OpenAI GPT-4o | Gemini Flash 2.5 | OpenAI for quality; Gemini for cost at scale |
 | **Cost-Sensitive Deployment** | Gemini Flash 2.5 | OpenAI GPT-4o | Gemini's routing saved 55% vs GPT-4o in Ch 4 |
-| **Compliance & Ethics** | Claude Sonnet 4 | OpenAI GPT-4o | Claude best at surfacing caveats and edge cases |
+| **Compliance & Ethics** | Claude Sonnet 5 | OpenAI GPT-4o | Claude best at surfacing caveats and edge cases |
 | **Customer-Facing Agents** | OpenAI GPT-4o | Gemini Flash 2.5 | GPT-4o's natural conversational tone |
-| **Healthcare / Legal** | OpenAI GPT-4o | Claude Sonnet 4 | Both strong; OpenAI more available across chapters |
+| **Healthcare / Legal** | OpenAI GPT-4o | Claude Sonnet 5 | Both strong; OpenAI more available across chapters |
 | **IoT / Edge / Privacy** | DeepSeek V2 (Local) | Gemini Flash 2.5 | Local for air-gapped; Gemini for cloud fallback |
 | **Rapid Prototyping** | DeepSeek V2 (Local) | Gemini Flash 2.5 | Zero cost iteration; Gemini when ready to scale |
 
@@ -311,7 +311,7 @@ Each provider was rated 0-10 across eight dimensions per chapter:
 | [Ch 3 — Prompting](chapter03/LLM_COMPARISON.md) | `chapter03/LLM_COMPARISON.md` | OpenAI GPT-4o | 7.5 |
 | [Ch 4 — Deployment](chapter04/LLM_COMPARISON.md) | `chapter04/LLM_COMPARISON.md` | Gemini Flash 2.5 | 7.4 |
 | [Ch 5 — Architectures](chapter05/LLM_COMPARISON.md) | `chapter05/LLM_COMPARISON.md` | Tie (all) | 6.6 |
-| [Ch 6 — Knowledge Agents](chapter06/LLM_COMPARISON.md) | `chapter06/LLM_COMPARISON.md` | Claude Sonnet 4 | 8.6 |
+| [Ch 6 — Knowledge Agents](chapter06/LLM_COMPARISON.md) | `chapter06/LLM_COMPARISON.md` | Claude Sonnet 5 | 8.6 |
 | [Ch 7 — Tool Orchestration](chapter07/LLM_COMPARISON.md) | `chapter07/LLM_COMPARISON.md` | DeepSeek V2 | 7.3 |
 | [Ch 8 — Data Analysis](chapter08/LLM_COMPARISON.md) | `chapter08/LLM_COMPARISON.md` | OpenAI GPT-4o | 7.1 |
 | [Ch 9 — Software Dev](chapter09/LLM_COMPARISON.md) | `chapter09/LLM_COMPARISON.md` | Tie (OpenAI/Gemini) | 6.9 |

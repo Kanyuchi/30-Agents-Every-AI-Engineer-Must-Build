@@ -43,14 +43,14 @@ Each provider is rated 0-10 across eight dimensions:
 
 ## Execution Modes
 
-All three providers with outputs ran in **Live Mode** with real API calls. Claude Sonnet 4 had no saved outputs (notebook never executed).
+All three providers with outputs ran in **Live Mode** with real API calls. Claude Sonnet 5 had no saved outputs (notebook never executed).
 
 | Provider | Output Cells | Mode | LLM Backend |
 |---|---|---|---|
 | Gemini Flash 2.5 | 32 | Live Mode | ChatGoogleGenerativeAI |
 | OpenAI GPT-4o | 32 | Live Mode | ChatOpenAI |
 | DeepSeek V2 16B | 32 | Live Mode | ChatOllama (local) |
-| Claude Sonnet 4 | 0 | Not executed | -- |
+| Claude Sonnet 5 | 0 | Not executed | -- |
 
 **Note:** Compliance scanning (PolicyEngine, DataFlowAnalyzer), remediation, audit trails, sensing, critic KPI evaluation, and HITL checkpoint sections use deterministic pipelines and are identical across all providers. The LLM differentiates in code generation, test synthesis, semantic analysis, and hypothesis generation. All three providers encountered JSON parse failures in the PlannerAgent, triggering identical fallback hypotheses.
 
@@ -123,7 +123,7 @@ All three providers with outputs ran in **Live Mode** with real API calls. Claud
 | Practical Utility | 7.0 | 7.0 | 4.0 |
 | **WEIGHTED AVERAGE** | **6.9** | **6.9** | **4.9** |
 
-> *Claude Sonnet 4 had no saved outputs and is excluded.*
+> *Claude Sonnet 5 had no saved outputs and is excluded.*
 
 ---
 
@@ -187,7 +187,7 @@ Legend: **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 **Third place:** DeepSeek V2 16B (4.9/10) -- functional but has formula errors, mismatched test parameters, and outputs that are instructions rather than code.
 
-**Not ranked:** Claude Sonnet 4 (no saved outputs)
+**Not ranked:** Claude Sonnet 5 (no saved outputs)
 
 ### Best Provider by Scenario
 

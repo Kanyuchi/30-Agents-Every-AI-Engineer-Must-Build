@@ -50,7 +50,7 @@ Simulation Mode active. Reasons: torch not installed; No valid HUGGINGFACE_TOKEN
 All agents will use mock backends from mock_backends.py. No GPU or API token required.
 ```
 
-**Verification:** All four notebooks (Claude Sonnet 4, OpenAI GPT-4o, Gemini Flash 2.5, DeepSeek V2 16B) produce byte-identical outputs -- 10,676 characters of combined output text, with zero character differences across any provider pair.
+**Verification:** All four notebooks (Claude Sonnet 5, OpenAI GPT-4o, Gemini Flash 2.5, DeepSeek V2 16B) produce byte-identical outputs -- 10,676 characters of combined output text, with zero character differences across any provider pair.
 
 The LLM is never invoked. Mock backends return pre-authored responses for vision queries, audio transcription, and sentiment analysis regardless of which provider notebook is run.
 
@@ -60,7 +60,7 @@ The LLM is never invoked. Mock backends return pre-authored responses for vision
 
 | Provider | Output Cells | Mode | Outputs Identical |
 |---|---|---|---|
-| Claude Sonnet 4 | 30 | Simulation (mock backends) | Yes -- byte-identical |
+| Claude Sonnet 5 | 30 | Simulation (mock backends) | Yes -- byte-identical |
 | OpenAI GPT-4o | 30 | Simulation (mock backends) | Yes -- byte-identical |
 | Gemini Flash 2.5 | 30 | Simulation (mock backends) | Yes -- byte-identical |
 | DeepSeek V2 16B | 30 | Simulation (mock backends) | Yes -- byte-identical |
@@ -112,7 +112,7 @@ Because all four providers produce byte-identical outputs from mock backends, in
 
 ## Overall Scorecard
 
-| Dimension | Claude Sonnet 4 | OpenAI GPT-4o | Gemini Flash 2.5 | DeepSeek V2 |
+| Dimension | Claude Sonnet 5 | OpenAI GPT-4o | Gemini Flash 2.5 | DeepSeek V2 |
 |---|---|---|---|---|
 | All dimensions | Mock backends | Mock backends | Mock backends | Mock backends |
 | **WEIGHTED AVERAGE** | 6.8 | 6.8 | 6.8 | 6.8 |
@@ -143,7 +143,7 @@ Mock backends apply pre-authored multimodal processing patterns. In live mode, p
 ```
   Provider              Outputs  Mode                 Identical
   --------------------  -------  -------------------  ---------
-  Claude Sonnet 4          30   Mock backends         Yes
+  Claude Sonnet 5          30   Mock backends         Yes
   OpenAI GPT-4o            30   Mock backends         Yes
   Gemini Flash 2.5         30   Mock backends         Yes
   DeepSeek V2 (Local)      30   Mock backends         Yes
@@ -183,7 +183,7 @@ If run with `torch` installed and a valid `HUGGINGFACE_TOKEN`:
 |---|---|---|
 | Vision-language tasks | GPT-4o or Gemini Flash | Native multimodal APIs with strong image understanding |
 | Audio transcription | Any provider | Whisper-based transcription is provider-agnostic |
-| Combined vision + text reasoning | Claude Sonnet 4 | Strong at structured analysis of visual content |
+| Combined vision + text reasoning | Claude Sonnet 5 | Strong at structured analysis of visual content |
 | Local multimodal | DeepSeek + local models | Zero cloud dependency |
 
 ---

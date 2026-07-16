@@ -44,7 +44,7 @@ Each provider is rated 0--10 across eight dimensions:
 | Provider | Output Cells | LLM Mode | Key Observation |
 |---|---|---|---|
 | OpenAI GPT-4o | 17 | **Live API** (gpt-4o) | "LLM client: LiveLLM (OpenAI gpt-4o)" -- actual GPT-4o API calls for feedback, proposals, evaluations, consensus, and cross-pollination. |
-| Claude Sonnet 4 | 0 | Not executed | Notebook has no saved outputs. Excluded from scoring. |
+| Claude Sonnet 5 | 0 | Not executed | Notebook has no saved outputs. Excluded from scoring. |
 | Gemini Flash 2.5 | 17 | **Live API** (gemini-2.5-flash) | "LLM client: LiveLLM (Gemini gemini-2.5-flash)" -- actual Gemini API calls. Deprecated `google.generativeai` warning present. |
 | DeepSeek V2 16B | 17 | MockLLM (simulation) | "LLM client: MockLLM (Simulation Mode)" -- pre-authored mock responses. |
 
@@ -187,7 +187,7 @@ This is one of the few chapters where two cloud providers ran with actual live A
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | N/A | **8.0** | **8.0** |
 | Completeness | **8.0** | N/A | **6.0** | **8.0** |
@@ -199,7 +199,7 @@ This is one of the few chapters where two cloud providers ran with actual live A
 | Practical Utility | **8.0** | N/A | **8.0** | **7.0** |
 | **WEIGHTED AVERAGE** | **7.3** | **N/A** | **7.1** | **7.5** |
 
-> *Claude Sonnet 4 excluded (0 output cells). OpenAI and Gemini both ran live; DeepSeek used mock. Scores above 4.0 for Bloom's reflect live LLM output demonstrating genuine evaluation.*
+> *Claude Sonnet 5 excluded (0 output cells). OpenAI and Gemini both ran live; DeepSeek used mock. Scores above 4.0 for Bloom's reflect live LLM output demonstrating genuine evaluation.*
 
 ---
 
@@ -256,7 +256,7 @@ OpenAI and Gemini reach Level 5 (Evaluate) through their live LLM outputs: both 
   DeepSeek V2 (Local, Mock)    7.5  ██████████████████████░░░░░░░░░
   OpenAI GPT-4o (Live)         7.3  █████████████████████░░░░░░░░░░
   Gemini Flash 2.5 (Live)      7.1  █████████████████████░░░░░░░░░░
-  Claude Sonnet 4              N/A  (no saved outputs)
+  Claude Sonnet 5              N/A  (no saved outputs)
 ```
 
 ### Bloom's Taxonomy Tower
@@ -316,7 +316,7 @@ Legend: **O** = OpenAI GPT-4o, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 **Strengths:** Fastest live responses (~5 sec). Only live provider returning full 3-dimension evaluation scores (correctness=9.0, completeness=8.0, feasibility=9.0). Quick consensus convergence (2 rounds).
 **Weaknesses:** Consensus scores clustered at 5.0 -- limited discrimination between proposals. Rubric case study converged in 1 round with undifferentiated scores. Feedback uses flowing paragraph rather than structured code-level references.
 
-### Claude Sonnet 4 -- Not Evaluated
+### Claude Sonnet 5 -- Not Evaluated
 **Status:** 0 output cells saved. Notebook was not executed.
 
 ### Gemini Flash 2.5 -- "The Thorough Deliberator"

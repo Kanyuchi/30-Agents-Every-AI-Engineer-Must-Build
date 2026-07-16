@@ -45,7 +45,7 @@ Each provider is rated 0--10 across eight dimensions:
 | Provider | Output Cells | SIMULATION_MODE | LLM Client | Key Observation |
 |---|---|---|---|---|
 | OpenAI GPT-4o | 19 | False | MockChatOpenAI (fallback) | ChatOpenAI init failed: `1 validation error for ChatOpenAI`. Fell back to MockChatOpenAI. |
-| Claude Sonnet 4 | 19 | False | MockChatOpenAI (fallback) | Same ChatOpenAI init failure. Same MockChatOpenAI fallback. |
+| Claude Sonnet 5 | 19 | False | MockChatOpenAI (fallback) | Same ChatOpenAI init failure. Same MockChatOpenAI fallback. |
 | Gemini Flash 2.5 | 19 | False | MockChatOpenAI (fallback) | Same ChatOpenAI init failure. Same MockChatOpenAI fallback. |
 | DeepSeek V2 16B | 19 | True | MockChatOpenAI (explicit) | "Simulation Mode active -- using MockChatOpenAI with chapter-accurate mock data." |
 
@@ -85,7 +85,7 @@ The simulation outputs demonstrate:
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.0** | **8.0** | **8.0** |
 | Completeness | **9.0** | **9.0** | **9.0** | **9.0** |
@@ -137,7 +137,7 @@ The simulation reaches Level 5 (Evaluate) because the Unified Constraint Envelop
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   OpenAI GPT-4o          7.9  ███████████████████████░░░░░░░░
-  Claude Sonnet 4        7.9  ███████████████████████░░░░░░░░
+  Claude Sonnet 5        7.9  ███████████████████████░░░░░░░░
   Gemini Flash 2.5       7.9  ███████████████████████░░░░░░░░
   DeepSeek V2 (Local)    7.9  ███████████████████████░░░░░░░░
 ```
@@ -155,7 +155,7 @@ The simulation reaches Level 5 (Evaluate) because the Unified Constraint Envelop
   L1 Remember     | O C G D
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 

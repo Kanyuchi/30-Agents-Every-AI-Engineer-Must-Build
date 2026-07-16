@@ -47,7 +47,7 @@ Each provider is rated 0--10 across eight dimensions:
 | Provider | Output Cells | LLM Mode | Key Observation |
 |---|---|---|---|
 | OpenAI GPT-4o | 7 | Live API key detected | "Live API key detected. Running in LIVE MODE." All simulations use deterministic code paths; LLM analysis lines are `[SIMULATION MODE]` prefixed mock responses. |
-| Claude Sonnet 4 | 7 | Live API key detected | Identical outputs to OpenAI. Same `[SIMULATION MODE]` mock analysis. |
+| Claude Sonnet 5 | 7 | Live API key detected | Identical outputs to OpenAI. Same `[SIMULATION MODE]` mock analysis. |
 | Gemini Flash 2.5 | 7 | Live API key detected | Identical outputs to OpenAI. Same `[SIMULATION MODE]` mock analysis. |
 | DeepSeek V2 16B | 7 | Live API key detected | Identical outputs to OpenAI. Same `[SIMULATION MODE]` mock analysis. |
 
@@ -97,7 +97,7 @@ All four notebooks produce identical outputs:
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.0** | **8.0** | **8.0** |
 | Completeness | **9.0** | **9.0** | **9.0** | **9.0** |
@@ -155,7 +155,7 @@ The simulations do not reach Level 6 (Create) because they follow pre-defined ev
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   OpenAI GPT-4o          7.8  ███████████████████████░░░░░░░░
-  Claude Sonnet 4        7.8  ███████████████████████░░░░░░░░
+  Claude Sonnet 5        7.8  ███████████████████████░░░░░░░░
   Gemini Flash 2.5       7.8  ███████████████████████░░░░░░░░
   DeepSeek V2 (Local)    7.8  ███████████████████████░░░░░░░░
 ```
@@ -173,7 +173,7 @@ The simulations do not reach Level 6 (Create) because they follow pre-defined ev
   L1 Remember     | O C G D
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 

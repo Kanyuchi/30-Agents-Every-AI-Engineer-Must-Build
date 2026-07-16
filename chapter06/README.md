@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 # Then add your provider's dependencies:
 pip install -r requirements-openai.txt    # For OpenAI GPT-4o
-pip install -r requirements-claude.txt    # For Anthropic Claude Sonnet 4
+pip install -r requirements-claude.txt    # For Anthropic Claude Sonnet 5
 pip install -r requirements-gemini.txt    # For Google Gemini Flash 2.5
 pip install -r requirements-ollama.txt    # For local Ollama (DeepSeek V2)
 
@@ -101,7 +101,7 @@ Every notebook is pre-executed with outputs saved. Pick the variant that matches
 |---|---|---|
 | [ch06_knowledge_agents__RUN_NO_KEY_SIMULATION.ipynb](ch06_knowledge_agents__RUN_NO_KEY_SIMULATION.ipynb) | Simulation | No API key — MockLLM responses |
 | [ch06_knowledge_agents__RUN_OPENAI_GPT4o.ipynb](ch06_knowledge_agents__RUN_OPENAI_GPT4o.ipynb) | OpenAI GPT-4o | Live LLM via `OPENAI_API_KEY` |
-| [ch06_knowledge_agents__RUN_CLAUDE_Sonnet4.ipynb](ch06_knowledge_agents__RUN_CLAUDE_Sonnet4.ipynb) | Claude Sonnet 4 | Live LLM via `ANTHROPIC_API_KEY` |
+| [ch06_knowledge_agents__RUN_CLAUDE_Sonnet4.ipynb](ch06_knowledge_agents__RUN_CLAUDE_Sonnet4.ipynb) | Claude Sonnet 5 | Live LLM via `ANTHROPIC_API_KEY` |
 | [ch06_knowledge_agents__RUN_GEMINI_Flash25.ipynb](ch06_knowledge_agents__RUN_GEMINI_Flash25.ipynb) | Gemini Flash 2.5 | Live LLM via `GOOGLE_API_KEY` |
 | [ch06_knowledge_agents__RUN_LOCAL_OLLAMA_DeepSeek_V2_16B.ipynb](ch06_knowledge_agents__RUN_LOCAL_OLLAMA_DeepSeek_V2_16B.ipynb) | Local Ollama | DeepSeek V2 16B — no API key |
 

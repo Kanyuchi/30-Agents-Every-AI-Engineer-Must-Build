@@ -45,7 +45,7 @@ Each provider is rated 0-10 across eight dimensions:
 All four providers were run in LIVE MODE with real API keys:
 
 - **OpenAI GPT-4o**: `LIVE MODE -- OpenAI GPT-4o (key ...RNQA)`
-- **Claude Sonnet 4**: `LIVE MODE -- Claude claude-sonnet-5 (key ...tAAA)`
+- **Claude Sonnet 5**: `LIVE MODE -- Claude claude-sonnet-5 (key ...tAAA)`
 - **Gemini Flash 2.5**: `LIVE MODE -- Gemini 2.5 Flash (key ...s9hA)`
 - **DeepSeek V2 16B**: `LIVE MODE -- DeepSeek V2 16B via Ollama (local)`
 
@@ -86,7 +86,7 @@ The LLM is invoked for intent classification and goal decomposition, but the dow
 
 ---
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Execution mode:** LIVE MODE -- API key detected, real API calls enabled. Output identical to OpenAI.
 
@@ -139,7 +139,7 @@ The LLM is invoked for intent classification and goal decomposition, but the dow
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.0** | **8.0** | **8.0** |
 | Completeness | **7.0** | **7.0** | **7.0** | **7.0** |
@@ -178,7 +178,7 @@ All providers operate at Level 3 (Apply) because the pipeline applies predefined
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   OpenAI GPT-4o          6.6   ===================...........
-  Claude Sonnet 4        6.6   ===================...........
+  Claude Sonnet 5        6.6   ===================...........
   Gemini Flash 2.5       6.6   ===================...........
   DeepSeek V2 (Local)    6.6   ===================...........
 ```
@@ -196,7 +196,7 @@ All providers operate at Level 3 (Apply) because the pipeline applies predefined
   L1 Remember     | O C G D
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 
@@ -232,7 +232,7 @@ Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5
 ### OpenAI GPT-4o -- "Identical Output (Deterministic Pipeline)"
 **Note:** LIVE MODE active. API calls made for intent classification and decomposition, but outputs normalized into identical categories.
 
-### Claude Sonnet 4 -- "Identical Output (Deterministic Pipeline)"
+### Claude Sonnet 5 -- "Identical Output (Deterministic Pipeline)"
 **Note:** LIVE MODE active. Same normalization produces identical pipeline results.
 
 ### Gemini Flash 2.5 -- "Identical Output (Deterministic Pipeline)"

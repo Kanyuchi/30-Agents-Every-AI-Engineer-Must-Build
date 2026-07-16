@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 # Install your chosen provider's dependencies
 pip install -r requirements-openai.txt    # For OpenAI GPT-4o
-pip install -r requirements-claude.txt    # For Anthropic Claude Sonnet 4
+pip install -r requirements-claude.txt    # For Anthropic Claude Sonnet 5
 pip install -r requirements-gemini.txt    # For Google Gemini Flash 2.5
 pip install -r requirements-ollama.txt    # For local Ollama (no API key)
 
@@ -76,7 +76,7 @@ Every chapter includes **five pre-executed notebook variants** — pick the one 
 |---|---|---|---|
 | `__RUN_NO_KEY_SIMULATION` | None (MockLLM) | None | Built-in chapter-derived mock responses |
 | `__RUN_OPENAI_GPT4o` | OpenAI | `OPENAI_API_KEY` | GPT-4o / GPT-4o-mini |
-| `__RUN_CLAUDE_Sonnet4` | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet 4 |
+| `__RUN_CLAUDE_Sonnet4` | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet 5 |
 | `__RUN_GEMINI_Flash25` | Google | `GOOGLE_API_KEY` | Gemini Flash 2.5 |
 | `__RUN_LOCAL_OLLAMA_DeepSeek_V2_16B` | Ollama (local) | None | DeepSeek V2 16B + Llama 3.1 8B embeddings |
 

@@ -65,7 +65,7 @@ The `llm_analyst_agent` asks the LLM to assess fraud risk for three orders and r
 | Provider | Mode | ORD-1001 | ORD-1002 | ORD-1003 | Error |
 |---|---|---|---|---|---|
 | **OpenAI GPT-4o** | LIVE | high (fail) | high (fail) | high (fail) | "Expecting value: line 1 column 1 (char 0)" |
-| **Claude Sonnet 4** | LIVE | high (fail) | high (fail) | high (fail) | "Expecting value: line 1 column 1 (char 0)" |
+| **Claude Sonnet 5** | LIVE | high (fail) | high (fail) | high (fail) | "Expecting value: line 1 column 1 (char 0)" |
 | **Gemini Flash 2.5** | LIVE | high (fail) | high (fail) | high (fail) | "Expecting value: line 1 column 1 (char 0)" |
 | **DeepSeek V2 16B** | SIMULATION | low | medium | high | Mock correctly differentiated all 3 risk levels |
 
@@ -101,7 +101,7 @@ The `llm_analyst_agent` asks the LLM to assess fraud risk for three orders and r
 
 ---
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Execution mode:** LIVE MODE. All deterministic logic identical. LLM risk assessment failed.
 
@@ -171,7 +171,7 @@ The `llm_analyst_agent` asks the LLM to assess fraud risk for three orders and r
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **6.0** | **6.0** | **6.0** | **8.0** |
 | Completeness | **6.0** | **6.0** | **6.0** | **8.0** |
@@ -192,7 +192,7 @@ Level 6: Create      |
 Level 5: Evaluate    |
 Level 4: Analyze     |
 Level 3: Apply       | ============ DeepSeek V2 (mock -- correct risk differentiation)
-Level 2: Understand  | ============ OpenAI GPT-4o, Claude Sonnet 4, Gemini Flash 2.5
+Level 2: Understand  | ============ OpenAI GPT-4o, Claude Sonnet 5, Gemini Flash 2.5
 Level 1: Remember    |
 ```
 
@@ -209,7 +209,7 @@ DeepSeek's simulation mode reaches Level 3 (Apply) by correctly applying the cha
   --------------------  -----  ------------------------------
   DeepSeek V2 (Local)    7.3   =====================.........
   OpenAI GPT-4o          5.4   ================..............
-  Claude Sonnet 4        5.4   ================..............
+  Claude Sonnet 5        5.4   ================..............
   Gemini Flash 2.5       5.4   ================..............
 ```
 
@@ -226,7 +226,7 @@ DeepSeek's simulation mode reaches Level 3 (Apply) by correctly applying the cha
   L1 Remember     | O C G D
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
+Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2
 
 ---
 
@@ -250,7 +250,7 @@ Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5
 3. With corrected parsing (e.g., regex extraction of JSON from the response), all three cloud providers would likely produce superior risk assessments
 4. The vast majority of Chapter 7 logic (tool selection, chain-of-agents, conflict resolution) is deterministic and identical across all providers
 
-**Tied for second: OpenAI GPT-4o / Claude Sonnet 4 / Gemini Flash 2.5 (all 5.4/10)** -- all three showed the same behavior: correct deterministic pipeline execution but failed LLM risk assessment.
+**Tied for second: OpenAI GPT-4o / Claude Sonnet 5 / Gemini Flash 2.5 (all 5.4/10)** -- all three showed the same behavior: correct deterministic pipeline execution but failed LLM risk assessment.
 
 ### Best Provider by Scenario
 
@@ -270,7 +270,7 @@ Legend: **O** = OpenAI GPT-4o, **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5
 **Weaknesses:** LLM returned non-JSON output that caused parse failure; all orders defaulted to "high" risk.
 **Root cause:** "Expecting value: line 1 column 1 (char 0)" -- GPT-4o likely returned JSON wrapped in markdown code fences or explanatory text.
 
-### Claude Sonnet 4 -- "JSON Parse Failure"
+### Claude Sonnet 5 -- "JSON Parse Failure"
 **Strengths:** Same as OpenAI for deterministic stages.
 **Weaknesses:** Same JSON parse failure; same "high" default for all orders.
 **Root cause:** Identical to OpenAI -- Claude likely returned structured text around the JSON.

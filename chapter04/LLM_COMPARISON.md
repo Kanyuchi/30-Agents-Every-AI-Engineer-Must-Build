@@ -54,14 +54,14 @@ The router classifies 15 queries into Tier 1 (lightweight/cheap), Tier 2 (interm
 | Provider | Tier 1 | Tier 2 | Tier 3 | Cache | Total Tokens | Total Cost |
 |---|---|---|---|---|---|---|
 | **OpenAI GPT-4o** | 4 | 4 | 5 | 2 | 1,502 | $0.371 |
-| **Claude Sonnet 4** | 8 | 1 | 4 | 2 | 1,149 | $0.280 |
+| **Claude Sonnet 5** | 8 | 1 | 4 | 2 | 1,149 | $0.280 |
 | **Gemini Flash 2.5** | 4 | 8 | 1 | 2 | 1,002 | $0.167 |
 | **DeepSeek V2 (Local)** | 13 | 0 | 0 | 2 | 364 | $0.026 |
 
 **Analysis:**
 
 - **GPT-4o** produced the most balanced distribution (4/4/5) -- reasonable tier differentiation with the highest proportion of Tier 3 assignments. This suggests accurate complexity assessment but results in the highest cost ($0.371).
-- **Claude Sonnet 4** favored Tier 1 (8 queries) with moderate Tier 3 usage (4 queries) and minimal Tier 2 (1 query). This "polarized" distribution suggests Claude classified queries as either simple or complex with little middle ground. Total cost: $0.280.
+- **Claude Sonnet 5** favored Tier 1 (8 queries) with moderate Tier 3 usage (4 queries) and minimal Tier 2 (1 query). This "polarized" distribution suggests Claude classified queries as either simple or complex with little middle ground. Total cost: $0.280.
 - **Gemini Flash 2.5** heavily favored Tier 2 (8 queries) with only 1 Tier 3 -- the most cost-efficient cloud provider distribution at $0.167. This suggests Gemini defaulted to intermediate processing, which may under-serve complex queries.
 - **DeepSeek V2** routed all 13 non-cached queries to Tier 1, spending only $0.026. This extreme skew means the model classified every query as simple -- a significant under-classification that would degrade response quality for complex billing and transaction review queries in production.
 
@@ -86,7 +86,7 @@ Twenty inputs tested (10 malicious, 10 benign). This is the chapter's most discr
 | Provider | Accuracy | True Positives | True Negatives | False Negatives | False Positives |
 |---|---|---|---|---|---|
 | **OpenAI GPT-4o** | **95% (19/20)** | 9 | 10 | 1 | 0 |
-| **Claude Sonnet 4** | **95% (19/20)** | 9 | 10 | 1 | 0 |
+| **Claude Sonnet 5** | **95% (19/20)** | 9 | 10 | 1 | 0 |
 | **Gemini Flash 2.5** | **95% (19/20)** | 9 | 10 | 1 | 0 |
 | **DeepSeek V2 (Local)** | **90% (18/20)** | 9 | 9 | 1 | 1 |
 
@@ -131,7 +131,7 @@ All four providers produced identical toolchain tables (Docker, Kubernetes, Temp
 | Provider | Total Mock Tokens | Total Cost | Model Label |
 |---|---|---|---|
 | OpenAI GPT-4o | 2,242 | $0.104 | mock-gpt-3.5 / mock-gpt-4 |
-| Claude Sonnet 4 | 1,939 | $0.104 | mock-claude-haiku / mock-gpt-4 |
+| Claude Sonnet 5 | 1,939 | $0.104 | mock-claude-haiku / mock-gpt-4 |
 | Gemini Flash 2.5 | 1,742 | $0.104 | mock-gemini-flash / mock-gpt-4 |
 | DeepSeek V2 (Local) | 1,229 | $0.104 | mock-deepseek / mock-gpt-3.5 |
 
@@ -147,7 +147,7 @@ As with Chapter 2, the DeepSeek V2 notebook displayed `[WARNING] LLM_PROVIDER=ol
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.0** | **8.0** | **6.5** |
 | Completeness | **7.5** | **7.5** | **7.5** | **7.5** |
@@ -173,7 +173,7 @@ As with Chapter 2, the DeepSeek V2 notebook displayed `[WARNING] LLM_PROVIDER=ol
 ```
 Level 6: Create      |
 Level 5: Evaluate    |
-Level 4: Analyze     | OpenAI GPT-4o, Claude Sonnet 4, Gemini Flash 2.5
+Level 4: Analyze     | OpenAI GPT-4o, Claude Sonnet 5, Gemini Flash 2.5
 Level 3: Apply       | DeepSeek V2 (Local)
 Level 2: Understand  |
 Level 1: Remember    |
@@ -191,7 +191,7 @@ The three cloud providers reach Level 4 (Analyze) through their threat detection
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   1. Gemini Flash 2.5       7.4  ######################--------
-  2. Claude Sonnet 4        7.3  ######################--------
+  2. Claude Sonnet 5        7.3  ######################--------
   3. OpenAI GPT-4o          7.2  ######################--------
   4. DeepSeek V2 (Local)    6.1  ##################------------
 ```
@@ -209,7 +209,7 @@ The three cloud providers reach Level 4 (Analyze) through their threat detection
   L1 Remember     | O C G D
 ```
 
-Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
+Legend: **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
 
 ---
 
@@ -233,7 +233,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 - Claude's polarized routing (8/1/4) saves tokens but the 1:4 ratio of Tier 2:Tier 3 suggests miscalibration rather than deliberate cost optimization
 - Both providers matched Gemini on threat detection, so there is no quality advantage to justify the additional cost
 
-**Runner-up:** Claude Sonnet 4 (7.3/10) -- Second-lowest cost among cloud providers. Aggressive Tier 1 routing is reasonable for a cost-focused deployment but the near-absence of Tier 2 is a gap.
+**Runner-up:** Claude Sonnet 5 (7.3/10) -- Second-lowest cost among cloud providers. Aggressive Tier 1 routing is reasonable for a cost-focused deployment but the near-absence of Tier 2 is a gap.
 
 **Third place:** OpenAI GPT-4o (7.2/10) -- Most balanced and defensible routing distribution. Best choice if accuracy per query matters more than cost optimization.
 
@@ -263,7 +263,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 
 ---
 
-### Claude Sonnet 4 -- "The Selective Router"
+### Claude Sonnet 5 -- "The Selective Router"
 
 **Strengths:**
 - Second-lowest cloud routing cost ($0.280) with significant Tier 1 usage (8 queries)

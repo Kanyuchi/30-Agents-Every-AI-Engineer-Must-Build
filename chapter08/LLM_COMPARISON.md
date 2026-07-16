@@ -48,7 +48,7 @@ Despite all providers initializing in LIVE MODE:
 | Provider | Init Message | Live LLM Calls? | Reason |
 |---|---|---|---|
 | **OpenAI GPT-4o** | "OpenAI client initialized. Running in LIVE mode." | YES | `llm_call()` uses `client.chat.completions.create()` -- compatible |
-| **Claude Sonnet 4** | "Anthropic client initialized. Running in LIVE mode." | NO | `'Anthropic' object has no attribute 'chat'` -- API incompatible with llm_call() |
+| **Claude Sonnet 5** | "Anthropic client initialized. Running in LIVE mode." | NO | `'Anthropic' object has no attribute 'chat'` -- API incompatible with llm_call() |
 | **Gemini Flash 2.5** | "Gemini client initialized. Running in LIVE mode." | NO | `'GenerativeModel' object has no attribute 'chat'` -- API incompatible with llm_call() |
 | **DeepSeek V2 16B** | N/A | NO | 0 output cells in notebook |
 
@@ -84,7 +84,7 @@ Despite all providers initializing in LIVE MODE:
 
 **Assessment:** The interpretation correctly identifies the correlation strength (0.880) and draws appropriate causal inferences. It explains standard deviation in accessible language and correctly notes the absence of anomalies. However, it states "marketing spend explains approximately" without specifying R^2 directly, and overstates causation ("paying off") where correlation is the evidence.
 
-### Claude Sonnet 4 (MockLLM Fallback)
+### Claude Sonnet 5 (MockLLM Fallback)
 
 **Actual output:** "Marketing spend explains approximately 62% of the variation in revenue, indicating a strong positive correlation. Sales in Q2 for Region East appear unusually high, possibly due to promotional pricing or data entry anomalies."
 
@@ -110,7 +110,7 @@ No output cells in notebook.
 
 **Assessment:** GPT-4o produced a response that required regex fallback but ultimately yielded correct claim extraction. The regex parser successfully recovered both claims with accurate metadata.
 
-### Claude Sonnet 4 (MockLLM Fallback)
+### Claude Sonnet 5 (MockLLM Fallback)
 
 **Actual output:** `Live API call failed: 'Anthropic' object has no attribute 'chat' -- falling back to MockLLM.` MockLLM extracted the same 2 claims with slightly different text ("the city's unemployment rate fell by 5% last year" vs. "unemployment rate fell by 5%").
 
@@ -131,7 +131,7 @@ No output cells in notebook.
 
 **Assessment:** GPT-4o's GPS decomposition is significantly richer than MockLLM. Each sub-problem includes multiple elaborating questions that frame a genuine research agenda. The structure progresses logically from understanding each domain to applying cross-domain principles.
 
-### Claude Sonnet 4 (MockLLM Fallback)
+### Claude Sonnet 5 (MockLLM Fallback)
 
 **Actual output:** MockLLM GPS decomposition:
 - "What network topology properties correlate with cascading failure resistance?"
@@ -167,7 +167,7 @@ Identical to Claude -- same MockLLM responses.
 
 ---
 
-### Claude Sonnet 4
+### Claude Sonnet 5
 
 **Execution mode:** LIVE MODE initialized but all llm_call() routes through MockLLM due to API incompatibility.
 
@@ -182,7 +182,7 @@ Identical to Claude -- same MockLLM responses.
 | Nuance & Caveats | 5 | MockLLM mentions "possibly due to promotional pricing or data entry anomalies" |
 | Practical Utility | 6 | MockLLM output is functional but contains a factual error about anomalies |
 
-> *Output is from MockLLM, not the actual Claude Sonnet 4 model.*
+> *Output is from MockLLM, not the actual Claude Sonnet 5 model.*
 
 ---
 
@@ -215,7 +215,7 @@ Identical to Claude -- same MockLLM responses.
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 |
 |---|---|---|---|
 | Factual Accuracy | **8.0** | **6.0*** | **6.0*** |
 | Completeness | **8.0** | **6.0*** | **6.0*** |
@@ -237,7 +237,7 @@ Identical to Claude -- same MockLLM responses.
 Level 6: Create      |
 Level 5: Evaluate    | ============ OpenAI GPT-4o (GPS decomposition, stats evaluation)
 Level 4: Analyze     |
-Level 3: Apply       | ============ Claude Sonnet 4*, Gemini Flash 2.5* (MockLLM)
+Level 3: Apply       | ============ Claude Sonnet 5*, Gemini Flash 2.5* (MockLLM)
 Level 2: Understand  |
 Level 1: Remember    |
 ```
@@ -254,7 +254,7 @@ OpenAI GPT-4o reaches Level 5 through its GPS decomposition, which evaluates cro
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   OpenAI GPT-4o          7.1   =====================.........
-  Claude Sonnet 4        5.9*  =================.............
+  Claude Sonnet 5        5.9*  =================.............
   Gemini Flash 2.5       5.9*  =================.............
 ```
 
@@ -273,7 +273,7 @@ OpenAI GPT-4o reaches Level 5 through its GPS decomposition, which evaluates cro
   L1 Remember     | O C* G*
 ```
 
-Legend: **O** = OpenAI GPT-4o, **C*** = Claude Sonnet 4 (MockLLM), **G*** = Gemini Flash 2.5 (MockLLM)
+Legend: **O** = OpenAI GPT-4o, **C*** = Claude Sonnet 5 (MockLLM), **G*** = Gemini Flash 2.5 (MockLLM)
 
 ---
 
@@ -293,7 +293,7 @@ Legend: **O** = OpenAI GPT-4o, **C*** = Claude Sonnet 4 (MockLLM), **G*** = Gemi
 - 1.2-point lead over Claude and Gemini (both 5.9)
 
 **Why this is an unfair comparison:**
-- Claude Sonnet 4 and Gemini Flash 2.5 were **not tested** on the LLM-dependent tasks -- they were blocked by an API format incompatibility in `llm_call()`
+- Claude Sonnet 5 and Gemini Flash 2.5 were **not tested** on the LLM-dependent tasks -- they were blocked by an API format incompatibility in `llm_call()`
 - The `llm_call()` function uses `client.chat.completions.create()`, which is OpenAI's specific API format
 - With proper provider-specific dispatch, Claude and Gemini would likely score 7.0+ based on their Chapter 6 performance
 - This is an integration bug, not a model quality comparison
@@ -317,7 +317,7 @@ Legend: **O** = OpenAI GPT-4o, **C*** = Claude Sonnet 4 (MockLLM), **G*** = Gemi
 **Strengths:** Only provider with working live LLM calls; produced multi-paragraph statistical interpretation; rich GPS decomposition with elaborating questions; claim extraction succeeded via fallback.
 **Weaknesses:** Stats interpretation slightly overstates causation ("paying off"); claim extraction required regex fallback (not clean JSON); advantage is due to API compatibility, not inherent model superiority.
 
-### Claude Sonnet 4 -- "Blocked by API Incompatibility"
+### Claude Sonnet 5 -- "Blocked by API Incompatibility"
 **Note:** LIVE MODE initialized but all `llm_call()` routes failed with `'Anthropic' object has no attribute 'chat'`. All LLM-dependent outputs are from MockLLM. The Anthropic client is incompatible with the OpenAI-format `client.chat.completions.create()` call.
 
 ### Gemini Flash 2.5 -- "Blocked by API Incompatibility"

@@ -90,7 +90,7 @@ All four providers displayed the same `get_weather` schema, generated the same f
 
 Minor provider-aware differences in the Azure AI Foundry description:
 - **OpenAI notebook:** "Direct access to GPT-4/GPT-4o via Azure OpenAI Service"
-- **Claude notebook:** "Direct access to Claude Sonnet 4 via Azure AI Service"
+- **Claude notebook:** "Direct access to Claude Sonnet 5 via Azure AI Service"
 - **Gemini notebook:** "Direct access to Gemini models via Google Cloud AI"
 - **DeepSeek notebook:** Same as Gemini (fell back)
 
@@ -104,7 +104,7 @@ The DeepSeek V2 notebook displayed `[WARNING] LLM_PROVIDER=ollama but OLLAMA_API
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **7.0** | **7.0** | **7.0** | **6.5*** |
 | Completeness | **7.0** | **7.0** | **7.0** | **7.0** |
@@ -132,7 +132,7 @@ The DeepSeek V2 notebook displayed `[WARNING] LLM_PROVIDER=ollama but OLLAMA_API
 Level 6: Create      |
 Level 5: Evaluate    |
 Level 4: Analyze     |
-Level 3: Apply       | OpenAI GPT-4o, Claude Sonnet 4, Gemini Flash 2.5, DeepSeek V2
+Level 3: Apply       | OpenAI GPT-4o, Claude Sonnet 5, Gemini Flash 2.5, DeepSeek V2
 Level 2: Understand  |
 Level 1: Remember    |
 ```
@@ -149,7 +149,7 @@ All four providers operate at Level 3 (Apply) for this chapter. The LLM correctl
   Provider              Score  Visual
   --------------------  -----  ------------------------------
   1. OpenAI GPT-4o          6.3  ###################-----------
-     Claude Sonnet 4        6.3  ###################-----------
+     Claude Sonnet 5        6.3  ###################-----------
      Gemini Flash 2.5       6.3  ###################-----------
   4. DeepSeek V2 (Local)    6.1  ##################------------
 ```
@@ -167,7 +167,7 @@ All four providers operate at Level 3 (Apply) for this chapter. The LLM correctl
   L1 Remember     | C G D O
 ```
 
-Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
+Legend: **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
 
 ---
 

@@ -223,7 +223,7 @@ Five tickets classified by two persona variants (A = precise, B = lenient). Resu
 
 ## Overall Scorecard
 
-| Dimension | OpenAI GPT-4o | Claude Sonnet 4 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
+| Dimension | OpenAI GPT-4o | Claude Sonnet 5 | Gemini Flash 2.5 | DeepSeek V2 (Local) |
 |---|---|---|---|---|
 | Factual Accuracy | **8.0** | **8.5** | **7.5** | **7.0** |
 | Completeness | **8.0** | **9.0** | **8.5** | **7.5** |
@@ -248,14 +248,14 @@ Five tickets classified by two persona variants (A = precise, B = lenient). Resu
 
 ```
 Level 6: Create      |
-Level 5: Evaluate    | Claude Sonnet 4, OpenAI GPT-4o, Gemini Flash 2.5
+Level 5: Evaluate    | Claude Sonnet 5, OpenAI GPT-4o, Gemini Flash 2.5
 Level 4: Analyze     | DeepSeek V2 (Local)
 Level 3: Apply       |
 Level 2: Understand  |
 Level 1: Remember    |
 ```
 
-**Claude Sonnet 4** reaches Level 5.5 (strong Evaluate) through specific regulatory article citations in compliance review, persona boundary-setting in the internet query, and quantified campaign timing in the marketing branch.
+**Claude Sonnet 5** reaches Level 5.5 (strong Evaluate) through specific regulatory article citations in compliance review, persona boundary-setting in the internet query, and quantified campaign timing in the marketing branch.
 
 **OpenAI GPT-4o** reaches Level 5 (Evaluate) through the A/B testing task (100% accuracy on both classification variants), clean PTCF adherence, and consistent evaluation quality across case studies.
 
@@ -272,7 +272,7 @@ Level 1: Remember    |
 ```
   Provider              Score  Visual
   --------------------  -----  ------------------------------
-  1. Claude Sonnet 4        7.8  #######################-------
+  1. Claude Sonnet 5        7.8  #######################-------
   2. OpenAI GPT-4o          7.5  #######################-------
   3. Gemini Flash 2.5       7.4  ######################--------
   4. DeepSeek V2 (Local)    6.8  ####################----------
@@ -291,7 +291,7 @@ Level 1: Remember    |
   L1 Remember     | C O G D
 ```
 
-Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
+Legend: **C** = Claude Sonnet 5, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, **O** = OpenAI GPT-4o
 
 ---
 
@@ -315,7 +315,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 - Specific regulatory citations (MiFID II Article 24, FCA COBS 9A) are valuable for compliance teams but add tokens without changing the outcome: all providers correctly flagged the violations
 - The pricing specificity in the ToT branch ($9.99/month, $79.99/year) is impressive but potentially misleading in a strategic analysis -- these numbers have no empirical basis
 
-**Runner-up:** Claude Sonnet 4 (7.8/10) -- Highest raw score. Best for compliance-heavy applications requiring specific regulatory citations and inter-agent protocols with rich metadata. The persona boundary-awareness is unique and valuable for safety-critical systems.
+**Runner-up:** Claude Sonnet 5 (7.8/10) -- Highest raw score. Best for compliance-heavy applications requiring specific regulatory citations and inter-agent protocols with rich metadata. The persona boundary-awareness is unique and valuable for safety-critical systems.
 
 **Third place:** Gemini Flash 2.5 (7.4/10) -- OWASP taxonomy referencing in code review and client-side-first CoT approach were standout contributions. Penalized for the A/B testing accuracy gap and "None" urgency classification.
 
@@ -324,9 +324,9 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 | Scenario | Best Choice | Why |
 |---|---|---|
 | Production agent prompting | OpenAI GPT-4o | Cleanest PTCF adherence; highest A/B testing accuracy |
-| Compliance-heavy domains | Claude Sonnet 4 | Specific regulatory article citations; persona boundary enforcement |
+| Compliance-heavy domains | Claude Sonnet 5 | Specific regulatory article citations; persona boundary enforcement |
 | Security-focused code review | Gemini Flash 2.5 | OWASP taxonomy alignment; most detailed vulnerability descriptions |
-| Multi-expert ToT analysis | Claude Sonnet 4 | Specific pricing and campaign timing; richest synthesis |
+| Multi-expert ToT analysis | Claude Sonnet 5 | Specific pricing and campaign timing; richest synthesis |
 | Cost-efficient prototyping | DeepSeek V2 (Local) | Zero API cost; valid outputs across all tasks |
 
 ## Provider Profiles for This Chapter
@@ -346,7 +346,7 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 
 ---
 
-### Claude Sonnet 4 -- "The Compliance Specialist"
+### Claude Sonnet 5 -- "The Compliance Specialist"
 
 **Strengths:**
 - Only provider to enforce persona boundaries on the internet connectivity query
@@ -398,11 +398,11 @@ Legend: **C** = Claude Sonnet 4, **G** = Gemini Flash 2.5, **D** = DeepSeek V2, 
 | Use Case | Recommended Provider | Why |
 |---|---|---|
 | **Production PTCF agents** | OpenAI GPT-4o | Cleanest format adherence; highest classification accuracy |
-| **Compliance screening** | Claude Sonnet 4 | Specific regulatory citations; persona boundary enforcement |
+| **Compliance screening** | Claude Sonnet 5 | Specific regulatory citations; persona boundary enforcement |
 | **Security code review** | Gemini Flash 2.5 | OWASP-aligned output; most detailed vulnerability analysis |
-| **Multi-expert synthesis** | Claude Sonnet 4 | Richest ToT branch outputs with actionable specifics |
+| **Multi-expert synthesis** | Claude Sonnet 5 | Richest ToT branch outputs with actionable specifics |
 | **Offline prototyping** | Ollama DeepSeek V2 | Zero cost; valid outputs across all prompting patterns |
 
 ---
 
-*Analysis based on Chapter 3 notebook outputs executed April 2026. All four providers ran in LIVE mode with real API keys (OpenAI GPT-4o, Claude Sonnet 4, Gemini Flash 2.5, DeepSeek V2 16B via Ollama). Scores reflect actual output from persona construction, PTCF, CoT/ToT, classification, and case study cells, with specific output text cited as evidence.*
+*Analysis based on Chapter 3 notebook outputs executed April 2026. All four providers ran in LIVE mode with real API keys (OpenAI GPT-4o, Claude Sonnet 5, Gemini Flash 2.5, DeepSeek V2 16B via Ollama). Scores reflect actual output from persona construction, PTCF, CoT/ToT, classification, and case study cells, with specific output text cited as evidence.*
